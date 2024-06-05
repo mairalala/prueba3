@@ -19,8 +19,7 @@ try {
   app.post("/login", (req, res) => {
     const sql = "select * from user where usercol = ? AND  password = ?";
 
-    db.query(sql, [req.body.usercol, req.body.password], (error, data) =>
-{
+    db.query(sql, [req.body.usercol, req.body.password], (error, data) => {
       if (error) {
         return res.json("Error");
       } else {
