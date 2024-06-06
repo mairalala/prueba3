@@ -21,13 +21,12 @@ try {
 
     db.query(sql, [req.body.usercol, req.body.password], (error, data) => {
       if (error) {
-        return res.json("Error");
+        return res.json(error);
+      }
+      if (data.length > 0) {
+        return res.json("Usuario reconocido");
       } else {
-        if (data.length > 0) {
-          return res.json("Usuario reconocido");
-        } else {
-          return res.json("Usuario no reconocido");
-        }
+        return res.json("Usuario no reconocido");
       }
     });
   });
