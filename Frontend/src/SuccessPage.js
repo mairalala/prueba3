@@ -1,10 +1,9 @@
 import React from 'react';
-
+import ReservationForm from './ReservationForm'; // Importa el formulario de reservación
 const SuccessPage = () => {
     return (
         <div className="success-message">
-            <h1>Login exitoso</h1>
-            <p>Has sido redirigido a esta página después de un login exitoso.</p>
+            <ReservationForm /> {/* Incluye el formulario de reservación */}
         </div>
     );
 };
